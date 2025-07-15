@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Excellent's Industry_Portfolio</title>
+  <link rel="icon" href="content/logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo"><a href="#hero">Flint.dev</a></h2>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+ <!-- Hero Section -->
+  <header id="hero" class="hero fade-in">
+    <div class="overlay">
+      <h1 class="fade-in">Hi, I'm Excellent <i class="fa-solid fa-handshake"></i></h1>
+      <p class="fade-in">Junior Web Developer | Frontend Enthusiast | Junior Backend Developer</p>
+
+      <div class="welcome-box fade-up">
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <button onclick="welcomeUser()">Welcome Me</button>
+      </div>
+    </div>
+  </header>
+
+ <div class="welcome-popup" id="welcomePopup">
+  <div class="popup-icon">
+    <i class="fa-solid fa-face-smile"></i>
+  </div>
+  <p id="welcomeMessage">
+    Welcome to my portfolio <br> <span id="userName"></span>
+  </p>
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- About Section -->
+  <section id="about" class="card fade-up">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <p>I am a passionate software developer with a strong foundation in frontend technologies. I build responsive, user-friendly websites using HTML, CSS, JavaScript and React.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="card fade-up">
+    <h2><i class="fas fa-laptop-code"></i> Projects</h2>
+    <div class="project-grid">
+      <div class="project-card fade-up">
+        <h3><i class="fa-solid fa-file"></i> CV-Bot Website</h3>
+        <p>A website that allows end users to find local job descriptions that match their resumes.
+          Developed in 2024 as a school project with friends.
+        </p>
+      </div>
+      <div class="project-card fade-up">
+        <h3><i class="fa-solid fa-book"></i> E-commerce Website</h3>
+        <p>A online book selling Website which allow customers to filter books based on preference.</p>
+      </div>
+      <div class="project-card fade-up">
+        <h3><i class="fa-solid fa-graduation-cap"></i> We-Mentor Web Application</h3>
+        <p>An online platform that makes it easy for university students to interact with their mentors on a daily basis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Section -->
+  <section id="journey" class="timeline-section card fade-up">
+    <h2><i class="fas fa-road"></i> My Technical Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="timeline-content">
+          <h3>2022 - First Line of Code</h3>
+          <p>Started learning HTML, CSS, JavaScript, Java through school, online tutorials and YouTube.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon green"><i class="fab fa-js-square"></i></div>
+        <div class="timeline-content">
+          <h3>2023 - Object Oriented Programming</h3>
+          <p>Built simple interactive projects like to-do lists and calculators. Also using relational database like SQL.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon dark"><i class="fab fa-react"></i></div>
+        <div class="timeline-content">
+          <h3>2024 (Jan-Jun) - Frameworks & Git</h3>
+          <p>Learned React, Boots trap, Git and Firebase. Started hosting projects on GitHub and Firebase.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon orange"><i class="fas fa-users"></i></div>
+        <div class="timeline-content">
+          <h3>2024 (Jun-Dec) - Team Projects</h3>
+          <p>Worked on group projects and participated in varius hackathons,
+            Also did my WIL Internship as a junior full stack developer.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon purple"><i class="fa-solid fa-certificate"></i></div>
+        <div class="timeline-content">
+          <h3>2025 - Qualifications</h3>
+          <p>Graduated with Diploma in computer Science, Also earned an AWS Practitioner foundation certifcate. </p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon teal"><i class="fas fa-briefcase"></i></div>
+        <div class="timeline-content">
+          <h3>2025 - Freelance & Growth</h3>
+          <p>Started taking freelance jobs and continuously improving as a developer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="card fade-up" >
+    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+    <form action="https://formspree.io/f/mrbkwvwz" method="POST" class="contact-form">
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="fullName" placeholder="Your name and surname" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form> 
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="fade-up">
+    <p>Made by Excellent Nambane &copy; 2025 <br>Email: nambaneexcellent@gmail.com</p>
+    <div class="footer-links">
+      <a href="https://github.com/ExcellentPr" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/excellent-nambane-70a686300/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

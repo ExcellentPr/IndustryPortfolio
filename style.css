@@ -1,0 +1,473 @@
+:root {
+  --primary: #3f51b5;
+  --hover: #5a3d85;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f4f8;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.nav-links li a:hover {
+  color: var(--hover);
+  font-size: 1.05rem;
+  text-shadow: 0 2px 5px rgba(8, 22, 100, 0.3);
+}
+
+.logo a {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.logo a:hover {
+  text-shadow: 0 0 5px var(--primary);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 50vh;
+  background-image: url('content/agi.jpg');
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 51, 153, 0.6);
+  z-index: 0;
+}
+
+.hero .overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* Welcome Popup Centered with Bounce */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Popup styling */
+.welcome-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: rgba(255, 255, 255, 0.897);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 9999;
+  animation: bounceIn 0.6s ease;
+  flex-direction: column;
+  align-items: center;
+  border: solid 2px var(--primary);
+  
+}
+
+/* Bigger name styling */
+#welcomeMessage span#userName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  width: 100%;
+  transition: width 1s linear;
+}
+
+/* Bounce animation */
+@keyframes bounceIn {
+  0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
+  60% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Floating icon animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+.popup-icon {
+  font-size: 4rem; /* Make the icon bigger */
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  animation: bounceIcon 2s infinite;
+}
+
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+
+/* Border for Input */
+.welcome-box input {
+  color: rgb(4, 49, 141);
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+}
+
+
+/* Bouncy Welcome Button */
+.welcome-box button {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  animation: bounceBtn 2s infinite ease-in-out;
+  transition: background 0.3s ease;
+}
+
+.welcome-box button:hover {
+  background-color: var(--hover);
+}
+
+@keyframes bounceBtn {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+
+/* Card */
+.card {
+  background: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(63, 81, 181, 0.05);
+  max-width: 900px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(63, 81, 181, 0.2);
+}
+
+.card h2 {
+  color: var(--primary);
+}
+
+/* Project Section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: #eef1fb;
+  padding: 1.2rem;
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  background-color: #b5e5eeaf;
+  box-shadow: 0 6px 20px rgba(63, 81, 181, 0.2);
+}
+
+.project-card h3 {
+  color: var(--primary);
+}
+
+.project-card:hover h3 {
+  color: var(--hover);
+}
+
+/* Timeline Section */
+.timeline-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#journey {
+  background: rgba(63, 81, 181, 0.15);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(63, 81, 181, 0.1);
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-item {
+  width: 30%;
+  min-width: 250px;
+  position: relative;
+  margin-bottom: 3rem;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.timeline-item.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-icon {
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-icon.green { background: #8bc34a; }
+.timeline-icon.orange { background: #ff9800; }
+timeline-icon.purple { background: #9c27b0; }
+.timeline-icon.teal { background: #009688; }
+.timeline-icon.dark { background: #3e4b5b; }
+
+.timeline-content {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(63, 81, 181, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content h3 {
+  margin-top: 0.5rem;
+  color: var(--primary);
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(63, 81, 181, 0.2);
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-item {
+    width: 100%;
+  }
+}
+
+/* Contact Section */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--hover);
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  position: relative;
+  color: #eee;
+  padding: 2rem;
+  text-align: center;
+  background-image: url('content/office.jpg');
+  background-position: center;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 51, 153, 0.6);
+  z-index: 0;
+}
+
+footer p,
+.footer-links {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-links a {
+  color: #eee;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--hover);
+}
+
+/* Reveal Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in, .fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in {
+  animation-delay: 0.2s;
+}
+
+.fade-up {
+  animation-delay: 0.4s;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    margin: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
