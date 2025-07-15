@@ -12,17 +12,37 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <h2 class="logo"><a href="#hero">Flint.dev</a></h2>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+ <!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <h2 class="logo"><a href="#hero">Excellent.Dev</a></h2>
+
+    <!-- Hamburger Icon (for small screens) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </nav>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+ <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
+
 
  <!-- Hero Section -->
   <header id="hero" class="hero fade-in">
