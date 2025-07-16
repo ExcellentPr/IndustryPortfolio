@@ -33,19 +33,6 @@
   </div>
 </nav>
 
-
- <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
-
-
-
-
  <!-- Hero Section -->
   <header id="hero" class="hero fade-in">
     <div class="overlay">
@@ -153,16 +140,21 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="card fade-up" >
-    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
-    <form action="https://formspree.io/f/mrbkwvwz" method="POST" class="contact-form">
-      <input type="email" name="email" placeholder="Your Email" required />
-      <input type="text" name="fullName" placeholder="Your name and surname" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-    </form> 
+<section id="contact" class="card fade-up">
+  <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+  <form
+    id="contactForm"
+    action="https://formspree.io/f/mrbkwvwz"
+    method="POST"
+    class="contact-form"
+  >
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="fullName" placeholder="Your name and surname" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+  </form>
+</section>
 
-  </section>
 
   <!-- Footer -->
   <footer class="fade-up">
