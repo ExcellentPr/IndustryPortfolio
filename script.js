@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// hamburger effect
+const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
 
 function welcomeUser() {
   const nameInput = document.getElementById("nameInput");
@@ -61,5 +68,15 @@ function welcomeUser() {
   }
 }
 
+//contact form clearing after submission
+
+const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function (e) {
+    // Delay to let Formspree process
+    setTimeout(() => {
+      form.reset();
+    }, 1000); // adjust delay if needed
+  });
 
 
